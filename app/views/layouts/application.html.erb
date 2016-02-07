@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Nerdgear</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <head>
+      <title>Nerdgear</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="full-width" id="header">
+            <div id="header-top">
+              <img id="logo-top" src="nerd-gear-logo.png" alt="NerdGear Logo" />
+              <span id="banner">NerdGear Designs</span>
+            </div>
+        </div>
+        <%= yield %>
+    </body>
 </html>
