@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 .full-width {
     width: 100%;
 }
@@ -22,18 +8,99 @@ body {
     margin: 0;
 }
 
+#body-container {
+    padding: 10px 25px;
+}
+
 #header-top {
     background-color: #9E9E9E;
     padding: 10px 25px;
-    text-align: center
+    display: flex;
+    align-items: center;
+    border-bottom: #333 solid 1px;
 }
 
-#logo-top {
-    height: 160px;
+#nav-container {
+    background-color: #9E9E9E;
+}
+
+#nav-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    #nav li {
+        float: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 20pt;
+    }
+
+        #nav li a {
+            margin: 10px 25px;
+            color: #000000;
+            text-decoration: none;
+        }
+        #nav li a:hover {
+            color: #000000;
+        }
+
+        #nav li ul.sub-menu {
+            position: absolute;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #bbbbbb;
+            display: none;
+        }
+
+        #nav li:hover {
+            background-color: #289930;
+        }
+
+        #nav li:hover ul.sub-menu {
+            display: block;
+            font-size: .8rem;
+        }
+
+        #nav li ul.sub-menu:hover {
+            display: block;
+        }
+
+        #nav li li {
+            float: none;
+        }
+
+        #nav li li a {
+            margin: 10px 0;
+        }
+
+
+    #nav #nav-right {
+        float: right;
+        margin-right: 10px;
+    }
+
+    #nav #nav-right li a {
+        margin: 10px 25px;
+    }
+
+#logo {
     display: inline;
 }
 
+    #logo img {
+        height: 160px;
+    }
+
+#logo:hover {
+    background-color: transparent;
+}
+
 #banner {
-    display: inline-block;
-    vertical-align: middle;
+    font-size: 50pt;
+    padding: 0 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
