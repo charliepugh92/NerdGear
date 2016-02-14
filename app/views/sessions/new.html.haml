@@ -1,0 +1,14 @@
+= form_for(:session, url: '/login') do |f|
+  = f.email_field :email, placeholder: 'Email'
+  = f.password_field :password, placeholder: 'Password'
+  = f.submit 'Submit'
+
+  - if @session.errors.any?
+    #error_explanation
+      %ul
+        - @session.errors.full_messages.each do |message|
+          %li
+            = message
+
+
+= link_to 'Register', '/register'

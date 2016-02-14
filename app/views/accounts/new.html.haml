@@ -1,0 +1,24 @@
+%h1 Sign up!
+
+= form_for @account, url: 'register' do |f|
+
+  - if @account.errors.any?
+    #error_explanation
+      %ul
+        - @account.errors.full_messages.each do |message|
+          %li
+            = message
+
+  = f.text_field :first_name, placeholder: 'First Name'
+  = f.text_field :last_name, placeholder: 'Last Name'
+
+  <br />
+  = f.text_field :email, placeholder: 'Email'
+  <br />
+
+
+  = f.password_field :password, placeholder: 'Password'
+  = f.password_field :password_confirmation, placeholder: 'Confirm Password'
+  <br />
+
+  = f.submit "Submit" 

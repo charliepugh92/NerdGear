@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def collect_categories
     @root_categories = Category.where(parent_category_id: nil)
   end
+
+  def login_as(account)
+    session[:account] = { id: account.id, first_name: account.first_name }
+  end
 end

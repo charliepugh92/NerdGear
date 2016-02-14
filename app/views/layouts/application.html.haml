@@ -17,7 +17,15 @@
             = raw(generate_category_with_subs(category))
         %ul#nav-right
           %li
-            %a{ href: '/login' } Login
+            - if session[:account] == nil
+              %a{ href: '/login' } Login
+            - else
+              %span.padded
+                Welcome,
+                = session[:account]['first_name']
+              %ul.sub-menu
+                %li
+                  %a{ href: '/logout' } Log Out
           %li
             %a{ href: '/cart' } Cart
     #body-container
