@@ -1,0 +1,24 @@
+!!! html
+%html
+  %head
+    %title Nerd Gear
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .full-width#header
+      #header-top
+        %a{ id: 'logo', href: '/' }
+          %img{ src: '/nerd-gear-logo.png', alt: 'NerdGear Logo' }
+        %span#banner NerdGear Designs
+      #nav-container
+        %ul#nav
+          - @root_categories.each do |category|
+            = raw(generate_category_with_subs(category))
+        %ul#nav-right
+          %li
+            %a{ href: '/login' } Login
+          %li
+            %a{ href: '/cart' } Cart
+    #body-container
+      = yield
