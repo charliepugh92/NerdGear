@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+.clear {
+    clear: both;
+}
+
 #body-container {
     padding: 10px 25px;
 }
@@ -22,6 +26,7 @@ body {
 
 #nav-container {
     background-color: #9E9E9E;
+    height: 61px;
 }
 
 #nav-container ul {
